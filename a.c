@@ -11,6 +11,18 @@ typedef struct zaznam{
   int vyska_p;
   int datum;
 }ZAZNAM;
+/* Poccet riadkov v subore */
+int lines(FILE *f){
+  char  buffer[BUFSIZ];
+  int lines = 0;
+  f = fopen("priestupky.txt", "r");
+  while (fgets(buffer, sizeof buffer, f)) {
+    ++lines;
+  }
+  fclose(f);
+  f = NULL;
+  return lines;
+}
 
 
 int main(int argc, char const *argv[]) {
