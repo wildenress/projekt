@@ -53,6 +53,11 @@ void start(ZAZNAM **a, FILE **f, int counter){
     printf("Chyba pri subore!\n" );
     return;
   }
+  c = (ZAZNAM *) malloc(counter * sizeof(ZAZNAM));
+  if( c == NULL){
+    printf("Pole nie je naplnené\n" );
+    return;
+  }
 }
 
 
