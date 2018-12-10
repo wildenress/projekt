@@ -58,6 +58,13 @@ void start(ZAZNAM **a, FILE **f, int counter){
     printf("Pole nie je naplnené\n" );
     return;
   }
+  while ( ! feof (*f) )
+  {
+      for ( i = 0; i < counter; i++) {
+        fscanf(*f,"%[^\n]\n %[^\n]\n %d\n %[^\n]\n %d\n %d\n %d\n",c[i].meno_P,c[i].pohlavie,&c[i].rok,c[i].spz,&c[i].typ,&c[i].vyska_p,&c[i].datum);
+      }
+  }
+  *a = c
 }
 
 
