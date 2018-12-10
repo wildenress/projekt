@@ -36,6 +36,10 @@ int mesiac(int n){
         n /= 10;
     return n;
 }
+void end(ZAZNAM *a,FILE *f){
+  free(a);
+  fclose(f);
+}
 
 
 int main(int argc, char const *argv[]) {
