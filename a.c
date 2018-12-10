@@ -29,6 +29,13 @@ int rok(int n){
         n /= 10;
     return n;
 }
+/* Mesiac pri zadavani datumu */
+int mesiac(int n){
+    n = n % 10000;
+    while (n >= 100)
+        n /= 10;
+    return n;
+}
 
 
 int main(int argc, char const *argv[]) {
