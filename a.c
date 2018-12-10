@@ -40,6 +40,15 @@ void end(ZAZNAM *a,FILE *f){
   free(a);
   fclose(f);
 }
+/* Prikaz "o" */
+void start(ZAZNAM **a, FILE **f, int counter){
+  int i;
+  if( *a != NULL)
+    free(*a);
+  if( *f != NULL)
+    fclose(*f);
+  ZAZNAM *c = NULL;
+}
 
 
 int main(int argc, char const *argv[]) {
