@@ -26,7 +26,10 @@ int lines(FILE *f){
 
 
 int main(int argc, char const *argv[]) {
-  printf("Projekt pokuty.\n", );
+  FILE *f = NULL;
+  ZAZNAM *a = NULL;
+  int counter = 0;
+  char moznost;
 
   return 0;
 }
