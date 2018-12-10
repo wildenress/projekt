@@ -48,6 +48,11 @@ void start(ZAZNAM **a, FILE **f, int counter){
   if( *f != NULL)
     fclose(*f);
   ZAZNAM *c = NULL;
+  *f=fopen("priestupky.txt","r");
+  if( *f == NULL){
+    printf("Chyba pri subore!\n" );
+    return;
+  }
 }
 
 
