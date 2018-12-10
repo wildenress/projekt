@@ -23,6 +23,12 @@ int lines(FILE *f){
   f = NULL;
   return lines;
 }
+/* Rok pri zadavani datumu */
+int rok(int n){
+    while (n >= 10000)
+        n /= 10;
+    return n;
+}
 
 
 int main(int argc, char const *argv[]) {
