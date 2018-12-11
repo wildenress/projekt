@@ -36,9 +36,16 @@ int mesiac(int n){
         n /= 10;
     return n;
 }
+/* Prikaz K */
 void end(ZAZNAM *a,FILE *f){
-  free(a);
-  fclose(f);
+  if( a != NULL){
+    free(a);
+    a = NULL;
+  }
+  if( f != NULL){
+    fclose(f);
+    f = NULL;
+  }
 }
 /* Prikaz "o" */
 void start(ZAZNAM **a, FILE **f, int counter){
@@ -66,6 +73,17 @@ void start(ZAZNAM **a, FILE **f, int counter){
   }
   *a = c
 }
+/* Vypis struktury */
+void vypis(ZAZNAM *a, int counter){
+  int i = 0;
+  if ( a == NULL) {
+    return;
+  }
+  for ( i = 0; i < counter; i++) {
+    printf("meno priezvisko: %s\npohlavie: %s\nrok narodenia: %d\nSPZ: %s\ntyp prestupku: %d\nvyska pokuty: %d\ndatum priestupku: %d\n",a[i].meno_P,a[i].pohlavie,a[i].rok,a[i].spz,a[i].typ,a[i].vyska_p,a[i].datum);
+    printf("\n" );
+  }
+}
 
 
 int main(int argc, char const *argv[]) {
@@ -73,6 +91,13 @@ int main(int argc, char const *argv[]) {
   ZAZNAM *a = NULL;
   int counter = 0;
   char moznost;
+  while(1){
+    scanf("%c",&moznost);
+  if ( moznost == 'a') {
+      counter++;
+      add(&a,counter);
+    }
+  }
 
   return 0;
 }
