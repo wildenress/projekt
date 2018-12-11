@@ -36,10 +36,29 @@ int mesiac(int n){
         n /= 10;
     return n;
 }
+/* Prikaz K */
 void end(ZAZNAM *a,FILE *f){
-  free(a);
-  fclose(f);
+  if( a != NULL){
+    free(a);
+    a = NULL;
+  }
+  if( f != NULL){
+    fclose(f);
+    f = NULL;
+  }
 }
+int palindrom(char str[]){
+  int l = 0;
+  int h = strlen(str) - 1;
+  while (h > l)
+  {
+      if (str[l++] != str[h--])
+      {
+          return 0;
+      }
+  }
+  return 1;
+  }
 /* Prikaz "o" */
 void start(ZAZNAM **a, FILE **f, int counter){
   int i;
